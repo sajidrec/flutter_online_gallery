@@ -66,7 +66,6 @@ class _GalleryScreenState extends State<GalleryScreen> {
     final ListResult listResult = await storageRef.listAll();
     for (Reference item in listResult.items) {
       _listOfAllImages.add(await item.getDownloadURL());
-      print("${await item.getDownloadURL()} <-> Image link");
     }
     _networkLoading = false;
     setState(() {});
