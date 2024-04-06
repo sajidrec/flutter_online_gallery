@@ -101,10 +101,13 @@ class _UploadScreenState extends State<UploadScreen> {
                       setState(() {});
                     } catch (e) {
                       if (mounted) {
-                        Get.snackbar("Failed", "Upload Failed",
-                            snackPosition: SnackPosition.BOTTOM,
-                            backgroundColor: Colors.red,
-                            colorText: AppColorsUtil.appTextColor);
+                        Get.snackbar(
+                          "Failed",
+                          "Upload Failed",
+                          snackPosition: SnackPosition.BOTTOM,
+                          backgroundColor: Colors.red,
+                          colorText: AppColorsUtil.appTextColor,
+                        );
                       }
                     }
 
