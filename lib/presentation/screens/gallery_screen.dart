@@ -1,4 +1,5 @@
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:online_gallery_app/presentation/utils/app_color_utils.dart';
@@ -47,10 +48,15 @@ class _GalleryScreenState extends State<GalleryScreen> {
                         SizedBox(
                           width: 135,
                           height: 135,
-                          child: Image.network(
-                            _listOfAllImages[index][1],
-                            fit: BoxFit.fill,
-                          ),
+                          child: Stack(children: [
+                            const Center(child: CircularProgressIndicator()),
+                            Image.network(
+                              _listOfAllImages[index][1],
+                              fit: BoxFit.cover,
+                              height: 135,
+                              width: 135,
+                            ),
+                          ]),
                         ),
                         const SizedBox(
                           height: 5,
