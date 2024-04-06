@@ -6,6 +6,7 @@ import 'package:get/route_manager.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:online_gallery_app/presentation/utils/app_color_utils.dart';
 import 'package:online_gallery_app/presentation/widgets/appbar.dart';
+import 'package:uuid/uuid.dart';
 
 class UploadScreen extends StatefulWidget {
   const UploadScreen({super.key});
@@ -85,11 +86,7 @@ class _UploadScreenState extends State<UploadScreen> {
                     setState(() {});
 
                     final storageRef = FirebaseStorage.instance.ref();
-                    final mountainsRef = storageRef.child(_pickedImage!.name);
-                    final mountainImagesRef =
-                        storageRef.child(_pickedImage!.path);
-                    assert(mountainsRef.name == mountainImagesRef.name);
-                    assert(mountainsRef.fullPath != mountainImagesRef.fullPath);
+                    final mountainsRef = storageRef.child(const Uuid().v1());
 
                     String filePath = _pickedImage!.path;
                     File file = File(filePath);
