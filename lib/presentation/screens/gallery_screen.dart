@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:online_gallery_app/presentation/controllers/gallery_screen_controller.dart';
 import 'package:online_gallery_app/presentation/screens/image_view_screen.dart';
