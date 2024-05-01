@@ -37,7 +37,7 @@ class _UploadScreenState extends State<UploadScreen> {
                   },
                   child: Container(
                     decoration: BoxDecoration(
-                      color: Colors.grey.shade700,
+                      color: AppColorsUtil.appColor,
                       borderRadius: const BorderRadius.all(
                         Radius.circular(15),
                       ),
@@ -71,17 +71,20 @@ class _UploadScreenState extends State<UploadScreen> {
                 InkWell(
                   onTap: () async {
                     if (uploadScreenController.pickedImage == null) {
-                      Get.snackbar("Nothing selected", "Please select first",
-                          snackPosition: SnackPosition.BOTTOM,
-                          backgroundColor: Colors.black,
-                          colorText: AppColorsUtil.appTextColor);
+                      Get.snackbar(
+                        "Nothing selected",
+                        "Please select first",
+                        snackPosition: SnackPosition.BOTTOM,
+                        backgroundColor: Colors.grey.withOpacity(.7),
+                        colorText: AppColorsUtil.appTextColor,
+                      );
                     } else {
                       await uploadScreenController.uploadFileToServer();
                     }
                   },
                   child: Container(
                     decoration: BoxDecoration(
-                      color: Colors.grey.shade700,
+                      color: AppColorsUtil.appColor,
                       borderRadius: const BorderRadius.all(
                         Radius.circular(15),
                       ),

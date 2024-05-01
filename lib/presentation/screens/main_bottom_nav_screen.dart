@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:online_gallery_app/presentation/screens/gallery_screen.dart';
 import 'package:online_gallery_app/presentation/screens/upload_screen.dart';
+import 'package:online_gallery_app/presentation/utils/app_color_utils.dart';
 
 class MainBottomNavScreen extends StatefulWidget {
   const MainBottomNavScreen({super.key});
@@ -22,6 +23,9 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
     return Scaffold(
       body: _screens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: AppColorsUtil.appColor,
+          selectedItemColor: Colors.white,
+          unselectedItemColor: Colors.white70,
           currentIndex: _selectedIndex,
           onTap: (int itemNumber) {
             _selectedIndex = itemNumber;

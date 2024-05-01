@@ -29,7 +29,7 @@ class UploadScreenController extends GetxController {
       await mountainsRef.putFile(file);
       Get.snackbar("Success", "Upload Successful",
           snackPosition: SnackPosition.BOTTOM,
-          backgroundColor: AppColorsUtil.appColor,
+          backgroundColor: Colors.green.withOpacity(.9),
           colorText: AppColorsUtil.appTextColor);
       _pickedImage = null;
 
