@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:online_gallery_app/controller_binder.dart';
 import 'package:online_gallery_app/presentation/screens/main_bottom_nav_screen.dart';
 
 class OnlineGalleryApp extends StatelessWidget {
@@ -7,9 +8,10 @@ class OnlineGalleryApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(
+    return GetMaterialApp(
       title: "Online Gallery App",
-      home: MainBottomNavScreen(),
+      home: const MainBottomNavScreen(),
+      initialBinding: ControllerBinder(),
     );
   }
 }
