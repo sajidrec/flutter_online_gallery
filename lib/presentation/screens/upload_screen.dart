@@ -37,9 +37,11 @@ class _UploadScreenState extends State<UploadScreen> {
                   },
                   child: Container(
                     decoration: BoxDecoration(
-                        color: Colors.grey.shade700,
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(15))),
+                      color: Colors.grey.shade700,
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(15),
+                      ),
+                    ),
                     width: double.infinity,
                     height: 45,
                     child: Center(

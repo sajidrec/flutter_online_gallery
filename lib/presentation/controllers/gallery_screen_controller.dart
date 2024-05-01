@@ -26,8 +26,14 @@ class GalleryScreenController extends GetxController {
   }
 
   Future<void> deleteFIle(int index) async {
+    _networkLoading = true;
+    update();
+
     final desertRef =
         FirebaseStorage.instance.ref().child(_listOfAllImages[index][0]);
     await desertRef.delete();
+
+    _networkLoading = false;
+    update();
   }
 }

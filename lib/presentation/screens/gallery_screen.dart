@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:online_gallery_app/presentation/controllers/gallery_screen_controller.dart';
 import 'package:online_gallery_app/presentation/screens/image_view_screen.dart';
@@ -35,8 +37,16 @@ class _GalleryScreenState extends State<GalleryScreen> {
               color: AppColorsUtil.appColor,
               onRefresh: () async => await controller.getAllItemLists(),
               child: (controller.listOfAllImages.isEmpty)
-                  ? const Center(
-                      child: Text("No Item Found"),
+                  ? Stack(
+                      children: [
+                        ListView(),
+                        const Center(
+                          child: Text(
+                            "No data found",
+                            style: TextStyle(fontSize: 22),
+                          ),
+                        ),
+                      ],
                     )
                   : GridView.builder(
                       padding: const EdgeInsets.all(5.0),
@@ -83,13 +93,11 @@ class _GalleryScreenState extends State<GalleryScreen> {
                                                         Colors.red),
                                               ),
                                               onPressed: () async {
+                                                Get.back();
                                                 await controller
                                                     .deleteFIle(index);
-
                                                 await controller
                                                     .getAllItemLists();
-
-                                                Get.back();
                                               },
                                               child: const Text("Yes"),
                                             ),

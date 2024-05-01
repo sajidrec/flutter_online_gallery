@@ -3,6 +3,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:online_gallery_app/presentation/controllers/gallery_screen_controller.dart';
 import 'package:online_gallery_app/presentation/utils/app_color_utils.dart';
 import 'package:uuid/uuid.dart';
 
@@ -31,6 +32,10 @@ class UploadScreenController extends GetxController {
           backgroundColor: AppColorsUtil.appColor,
           colorText: AppColorsUtil.appTextColor);
       _pickedImage = null;
+
+      final galleryScreenController = Get.find<GalleryScreenController>();
+      galleryScreenController.getAllItemLists();
+
       update();
     } catch (e) {
       Get.snackbar(
